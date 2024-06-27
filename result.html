@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats de l'analyse NLP</title>
+</head>
+<body>
+    <h1>Résultats de l'analyse NLP</h1>
+    <h2>Texte Entré</h2>
+    <p>{{ input_text }}</p>
+
+    <h2>POS Tagging</h2>
+    <ul>
+        {% for token, pos in pos_tags %}
+            <li>{{ token }}: {{ pos }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Reconnaissance d'entités nommées (NER)</h2>
+    <ul>
+        {% for entity, label in entities %}
+            <li>{{ entity }}: {{ label }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Modélisation de sujets</h2>
+    <ul>
+        {% for topic in topics %}
+            <li>{{ topic }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Traduction</h2>
+    <p>{{ translated_text }}</p>
+
+    <a href="/">Retour</a>
+</body>
+</html>
